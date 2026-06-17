@@ -7,91 +7,83 @@
 
 <style>
 body{
-margin:0;
-font-family:Arial,sans-serif;
 background:#000;
 color:white;
+font-family:Arial,sans-serif;
+margin:0;
 }
 
 header{
-background:#000;
+background:#111;
 padding:20px;
 text-align:center;
-font-size:35px;
+font-size:32px;
 font-weight:bold;
-border-bottom:2px solid #ffd700;
+border-bottom:1px solid #333;
 }
 
-.box{
-width:95%;
-max-width:900px;
-margin:15px auto;
-background:#111;
+.container{
 padding:15px;
-border-radius:12px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-}
-
-th,td{
-border:1px solid #333;
-padding:10px;
+margin-top:15px;
 }
 
 th{
-background:#222;
+background:#333;
+padding:12px;
 }
 
-input[type=checkbox]{
-width:22px;
-height:22px;
+td{
+padding:12px;
+border:1px solid #444;
 }
 
 input[type=text]{
 width:100%;
 padding:12px;
 margin-top:10px;
+background:#111;
+color:white;
+border:1px solid #555;
 border-radius:8px;
-border:none;
+box-sizing:border-box;
 }
 
 input[type=file]{
-width:100%;
-padding:12px;
-margin-top:10px;
-background:#ffd700;
-border-radius:8px;
+margin-top:15px;
+color:white;
 }
 
 .total{
+margin-top:20px;
 font-size:24px;
 font-weight:bold;
-color:#ffd700;
-margin-top:15px;
+color:#00ff88;
 text-align:center;
 }
 
 .btn{
-display:block;
-background:#ffd700;
-color:#000;
-text-align:center;
+width:100%;
 padding:15px;
-border-radius:10px;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
 margin-top:20px;
+background:#00cc66;
+border:none;
+color:white;
+font-size:20px;
+border-radius:10px;
+cursor:pointer;
 }
 
-.card{
-background:#1a1a1a;
+.info{
+background:#111;
 padding:15px;
 border-radius:10px;
-margin-top:15px;
+margin-top:20px;
+line-height:1.8;
 }
 </style>
 </head>
@@ -100,9 +92,9 @@ margin-top:15px;
 
 <header>DARW SHOP</header>
 
-<div class="box">
+<div class="container">
 
-<h2>PUBG MOBILE UC</h2>
+<h2>PUBG Mobile UC</h2>
 
 <table>
 <tr>
@@ -111,6 +103,7 @@ margin-top:15px;
 <th>Qiymət</th>
 </tr>
 
+<tr><td><input type="checkbox" value="1" onchange="hesabla()"></td><td>30 UC</td><td>1 AZN</td></tr>
 <tr><td><input type="checkbox" value="2" onchange="hesabla()"></td><td>60 UC</td><td>2 AZN</td></tr>
 <tr><td><input type="checkbox" value="4" onchange="hesabla()"></td><td>120 UC</td><td>4 AZN</td></tr>
 <tr><td><input type="checkbox" value="6" onchange="hesabla()"></td><td>180 UC</td><td>6 AZN</td></tr>
@@ -121,54 +114,48 @@ margin-top:15px;
 <tr><td><input type="checkbox" value="19" onchange="hesabla()"></td><td>720 UC</td><td>19 AZN</td></tr>
 <tr><td><input type="checkbox" value="21" onchange="hesabla()"></td><td>780 UC</td><td>21 AZN</td></tr>
 <tr><td><input type="checkbox" value="26" onchange="hesabla()"></td><td>1045 UC</td><td>26 AZN</td></tr>
+<tr><td><input type="checkbox" value="41" onchange="hesabla()"></td><td>1800 UC</td><td>41 AZN</td></tr>
+<tr><td><input type="checkbox" value="81" onchange="hesabla()"></td><td>3850 UC</td><td>81 AZN</td></tr>
+<tr><td><input type="checkbox" value="156" onchange="hesabla()"></td><td>8100 UC</td><td>156 AZN</td></tr>
+<tr><td><input type="checkbox" value="312" onchange="hesabla()"></td><td>16200 UC</td><td>312 AZN</td></tr>
+<tr><td><input type="checkbox" value="468" onchange="hesabla()"></td><td>24300 UC</td><td>468 AZN</td></tr>
+<tr><td><input type="checkbox" value="624" onchange="hesabla()"></td><td>32400 UC</td><td>624 AZN</td></tr>
 </table>
 
 <div class="total">
 Ümumi: <span id="cem">0</span> AZN
 </div>
 
-<h3>PUBG ID</h3>
-<input type="text" placeholder="PUBG ID daxil et">
+<input type="text" placeholder="PUBG ID">
+<input type="text" placeholder="Nikname">
 
-<h3>Çek əlavə et</h3>
 <input type="file">
 
-<div class="card">
+<button class="btn" onclick="window.open('https://t.me/darwshopuc')">
+Sifariş Et
+</button>
+
+<div class="info">
+🌟 Sizə necə kömək edə bilərəm?<br><br>
+
+💳 Ödəniş:<br>
+M10: 077-117-36-26<br>
 Kart: 5243 7544 4775 8283<br>
-Bitmə tarixi: 10/29<br>
-M10: 077-117-36-26
-</div>
+(Unibank)<br><br>
 
-<a class="btn" href="https://t.me/darwshopuc">
-SİFARİŞ ET
-</a>
+🚀 Ödəniş etdikdən sonra çeki, PUBG ID-ni və Nikname-i Telegrama göndərin.
+</div>
 
 </div>
 
 <script>
 function hesabla(){
-let cem=0;
-document.querySelectorAll('input[type=checkbox]:checked').forEach(function(x){
-cem += Number(x.value);
+let toplam=0;
+document.querySelectorAll("input[type=checkbox]:checked")
+.forEach(x=>{
+toplam+=parseInt(x.value);
 });
-document.getElementById("cem").innerText = cem;
-}
-</script>
-
-</body>
-</html><a class="btn" href="https://t.me/darwshopuc" target="_blank">
-SİFARİŞ ET
-</a>
-
-</div>
-
-<script>
-function hesabla(){
-let cem=0;
-document.querySelectorAll('input[type=checkbox]:checked').forEach(x=>{
-cem += Number(x.value);
-});
-document.getElementById("cem").innerText = cem;
+document.getElementById("cem").innerText=toplam;
 }
 </script>
 
