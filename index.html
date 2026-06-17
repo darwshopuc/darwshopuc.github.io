@@ -7,157 +7,120 @@
 
 <style>
 body{
-background:#000;
-color:white;
-font-family:Arial,sans-serif;
 margin:0;
+font-family:Arial,sans-serif;
+background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80');
+background-size:cover;
+background-attachment:fixed;
+color:white;
+}
+
+.overlay{
+background:rgba(0,0,0,0.85);
+min-height:100vh;
+padding-bottom:50px;
 }
 
 header{
-background:#111;
-padding:20px;
 text-align:center;
-font-size:32px;
+padding:25px;
+font-size:34px;
 font-weight:bold;
-border-bottom:1px solid #333;
+background:#000;
+letter-spacing:2px;
 }
 
-.container{
+.box{
+width:95%;
+max-width:900px;
+margin:auto;
+background:rgba(20,20,20,0.95);
 padding:15px;
+border-radius:15px;
+margin-top:15px;
 }
 
 table{
 width:100%;
 border-collapse:collapse;
-margin-top:15px;
+}
+
+th,td{
+border:1px solid #444;
+padding:12px;
+text-align:left;
+font-size:15px;
 }
 
 th{
-background:#333;
-padding:12px;
+background:#222;
 }
 
-td{
-padding:12px;
-border:1px solid #444;
+input[type=checkbox]{
+width:22px;
+height:22px;
 }
 
 input[type=text]{
 width:100%;
 padding:12px;
-margin-top:10px;
-background:#111;
-color:white;
-border:1px solid #555;
+border:none;
 border-radius:8px;
-box-sizing:border-box;
+margin-top:8px;
+font-size:16px;
 }
 
 input[type=file]{
-margin-top:15px;
-color:white;
+width:100%;
+padding:15px;
+background:#ffc107;
+border-radius:8px;
+margin-top:8px;
 }
 
 .total{
-margin-top:20px;
 font-size:24px;
 font-weight:bold;
-color:#00ff88;
+color:#ffd700;
 text-align:center;
+margin-top:15px;
 }
 
 .btn{
+display:block;
 width:100%;
-padding:15px;
-margin-top:20px;
-background:#00cc66;
+padding:18px;
+background:#ffd700;
+color:black;
+font-size:22px;
+font-weight:bold;
 border:none;
-color:white;
-font-size:20px;
 border-radius:10px;
-cursor:pointer;
+margin-top:20px;
+text-decoration:none;
+text-align:center;
 }
 
-.info{
+.card{
 background:#111;
 padding:15px;
 border-radius:10px;
-margin-top:20px;
 line-height:1.8;
+margin-top:15px;
+}
+
+.note{
+color:#ddd;
+font-size:14px;
+margin-top:10px;
 }
 </style>
 </head>
 
 <body>
 
+<div class="overlay">
+
 <header>DARW SHOP</header>
 
-<div class="container">
-
-<h2>PUBG Mobile UC</h2>
-
-<table>
-<tr>
-<th>Seç</th>
-<th>UC</th>
-<th>Qiymət</th>
-</tr>
-
-<tr><td><input type="checkbox" value="1" onchange="hesabla()"></td><td>30 UC</td><td>1 AZN</td></tr>
-<tr><td><input type="checkbox" value="2" onchange="hesabla()"></td><td>60 UC</td><td>2 AZN</td></tr>
-<tr><td><input type="checkbox" value="4" onchange="hesabla()"></td><td>120 UC</td><td>4 AZN</td></tr>
-<tr><td><input type="checkbox" value="6" onchange="hesabla()"></td><td>180 UC</td><td>6 AZN</td></tr>
-<tr><td><input type="checkbox" value="7" onchange="hesabla()"></td><td>240 UC</td><td>7 AZN</td></tr>
-<tr><td><input type="checkbox" value="9" onchange="hesabla()"></td><td>325 UC</td><td>9 AZN</td></tr>
-<tr><td><input type="checkbox" value="11" onchange="hesabla()"></td><td>385 UC</td><td>11 AZN</td></tr>
-<tr><td><input type="checkbox" value="17" onchange="hesabla()"></td><td>660 UC</td><td>17 AZN</td></tr>
-<tr><td><input type="checkbox" value="19" onchange="hesabla()"></td><td>720 UC</td><td>19 AZN</td></tr>
-<tr><td><input type="checkbox" value="21" onchange="hesabla()"></td><td>780 UC</td><td>21 AZN</td></tr>
-<tr><td><input type="checkbox" value="26" onchange="hesabla()"></td><td>1045 UC</td><td>26 AZN</td></tr>
-<tr><td><input type="checkbox" value="41" onchange="hesabla()"></td><td>1800 UC</td><td>41 AZN</td></tr>
-<tr><td><input type="checkbox" value="81" onchange="hesabla()"></td><td>3850 UC</td><td>81 AZN</td></tr>
-<tr><td><input type="checkbox" value="156" onchange="hesabla()"></td><td>8100 UC</td><td>156 AZN</td></tr>
-<tr><td><input type="checkbox" value="312" onchange="hesabla()"></td><td>16200 UC</td><td>312 AZN</td></tr>
-<tr><td><input type="checkbox" value="468" onchange="hesabla()"></td><td>24300 UC</td><td>468 AZN</td></tr>
-<tr><td><input type="checkbox" value="624" onchange="hesabla()"></td><td>32400 UC</td><td>624 AZN</td></tr>
-</table>
-
-<div class="total">
-Ümumi: <span id="cem">0</span> AZN
-</div>
-
-<input type="text" placeholder="PUBG ID">
-<input type="text" placeholder="Nikname">
-
-<input type="file">
-
-<button class="btn" onclick="window.open('https://t.me/darwshopuc')">
-Sifariş Et
-</button>
-
-<div class="info">
-🌟 Sizə necə kömək edə bilərəm?<br><br>
-
-💳 Ödəniş:<br>
-M10: 077-117-36-26<br>
-Kart: 5243 7544 4775 8283<br>
-(Unibank)<br><br>
-
-🚀 Ödəniş etdikdən sonra çeki, PUBG ID-ni və Nikname-i Telegrama göndərin.
-</div>
-
-</div>
-
-<script>
-function hesabla(){
-let toplam=0;
-document.querySelectorAll("input[type=checkbox]:checked")
-.forEach(x=>{
-toplam+=parseInt(x.value);
-});
-document.getElementById("cem").innerText=toplam;
-}
-</script>
-
-</body>
-</html>
+<div class="
