@@ -22,12 +22,26 @@ display:block;
 padding:10px;
 margin:5px 0;
 background:#1a1a1a;
-border-radius:8px;
+border-radius:10px;
 cursor:pointer;
 }
 
 input[type="checkbox"]{
 margin-right:10px;
+}
+
+input[type="text"]{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+input[type="file"]{
+width:100%;
+margin-top:10px;
 }
 
 #cem{
@@ -38,17 +52,17 @@ font-weight:bold;
 .order-btn{
 width:100%;
 padding:15px;
-margin-top:15px;
-background:#0f8f3d;
+background:#0a8f3d;
 color:white;
 border:none;
 border-radius:12px;
-font-size:20px;
+font-size:18px;
 font-weight:bold;
+margin-top:15px;
 cursor:pointer;
 }
 
-.whatsapp{
+.support-btn{
 position:fixed;
 bottom:20px;
 left:20px;
@@ -57,16 +71,13 @@ height:60px;
 border-radius:50%;
 background:#25D366;
 color:white;
+font-size:28px;
 display:flex;
 align-items:center;
 justify-content:center;
 text-decoration:none;
-font-size:28px;
-font-weight:bold;
-z-index:999;
 }
-</style></head>
-<body><h1>🎮 DARW SHOP UC</h1><div class="box">
+</style></head><body><h1>🎮 DARW SHOP UC</h1><div class="box">
 <h2>💎 PUBG Mobile UC Qiymətləri</h2><label><input type="checkbox" value="1">30 UC - 1 AZN</label>
 <label><input type="checkbox" value="2">60 UC - 2 AZN</label>
 <label><input type="checkbox" value="4">120 UC - 4 AZN</label>
@@ -85,30 +96,30 @@ z-index:999;
 <label><input type="checkbox" value="468">24300 UC - 468 AZN</label>
 <label><input type="checkbox" value="624">32400 UC - 624 AZN</label>
 
-<h3>💰 Toplam qiymət: <span id="cem">0</span> AZN</h3><button class="order-btn">
-🛒 Sifariş et
-</button></div><div class="box">
-<h2>⭐ Sizə necə kömək edə bilərəm?</h2>💳 Ödəniş:<br><br>
+<h3>💰 Toplam qiymət: <span id="cem">0</span> AZN</h3>
+</div><div class="box">
+<h2>📋 Sifariş məlumatı</h2><input type="text" id="pubgid" placeholder="PUBG ID">📸 Çek şəkli yüklə:
+<input type="file" id="cek">
 
-📱 M10: 077-117-36-26<br><br>
+<button class="order-btn">
+Seçilənləri sifariş et
+</button>
+</div><div class="box">
+<h2>⭐ Ödəniş məlumatları</h2>💳 M10: 077-117-36-26<br><br>
 
 💳 Kart: 5243 7544 4775 8283<br>
 🏦 Bank: Unibank<br>
 📅 Bitmə tarixi: 10/29<br><br>
 
-🚀 Ödəniş etdikdən sonra çekin şəklini, PUBG ID-ni və Nickname-i göndərin.
+🚀 Ödəniş etdikdən sonra çeki və PUBG ID-ni göndərin.
 
-</div><div class="box">
-<h2>📦 Sifariş üçün</h2>
-DARW SHOP-u seçdiyiniz üçün təşəkkür edirik. Xoş oyunlar! ✨
-</div><a class="whatsapp"
-href="https://wa.me/994771173626"
+</div><a class="support-btn"
+href="https://t.me/darwshopuc_bot"
 target="_blank">
 💬
 </a>
 
 <script>
-
 const qutular=document.querySelectorAll('input[type="checkbox"]');
 const cem=document.getElementById('cem');
 
@@ -128,9 +139,8 @@ toplam+=Number(qutu.value);
 cem.innerText=toplam;
 }
 
-document.querySelector(".order-btn").onclick=function(){
-alert("✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə ərzində UC yüklənəcək.");
+document.querySelector('.order-btn').onclick=function(){
+alert('✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə ərzində UC yüklənəcək.');
 }
-
 </script></body>
 </html>
