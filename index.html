@@ -1,4 +1,4 @@
-<!DOCTYPE<html lang="az">
+<!DOCTYPE html><html lang="az">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +17,10 @@ border-radius:15px;
 margin-bottom:15px;
 }
 
-h1,h2,h3{
-margin-bottom:10px;
-}
-
 label{
 display:block;
-padding:8px;
-margin:4px 0;
+padding:10px;
+margin:5px 0;
 background:#1a1a1a;
 border-radius:8px;
 cursor:pointer;
@@ -34,32 +30,43 @@ input[type="checkbox"]{
 margin-right:10px;
 }
 
-.price{
-color:gold;
-font-weight:bold;
-}
-
-.whatsapp{
-display:block;
-text-align:center;
-background:#25D366;
-color:white;
-padding:15px;
-border-radius:50px;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
-position:fixed;
-bottom:20px;
-left:20px;
-right:20px;
-}
-
 #cem{
 color:gold;
 font-weight:bold;
 }
-</style></head><body><h1>🎮 DARW SHOP UC</h1><div class="box">
+
+.order-btn{
+width:100%;
+padding:15px;
+margin-top:15px;
+background:#0f8f3d;
+color:white;
+border:none;
+border-radius:12px;
+font-size:20px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+left:20px;
+width:60px;
+height:60px;
+border-radius:50%;
+background:#25D366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:28px;
+font-weight:bold;
+z-index:999;
+}
+</style></head>
+<body><h1>🎮 DARW SHOP UC</h1><div class="box">
 <h2>💎 PUBG Mobile UC Qiymətləri</h2><label><input type="checkbox" value="1">30 UC - 1 AZN</label>
 <label><input type="checkbox" value="2">60 UC - 2 AZN</label>
 <label><input type="checkbox" value="4">120 UC - 4 AZN</label>
@@ -78,8 +85,9 @@ font-weight:bold;
 <label><input type="checkbox" value="468">24300 UC - 468 AZN</label>
 <label><input type="checkbox" value="624">32400 UC - 624 AZN</label>
 
-<h3>💰 Toplam qiymət: <span id="cem">0</span> AZN</h3>
-</div><div class="box">
+<h3>💰 Toplam qiymət: <span id="cem">0</span> AZN</h3><button class="order-btn">
+🛒 Sifariş et
+</button></div><div class="box">
 <h2>⭐ Sizə necə kömək edə bilərəm?</h2>💳 Ödəniş:<br><br>
 
 📱 M10: 077-117-36-26<br><br>
@@ -96,10 +104,11 @@ DARW SHOP-u seçdiyiniz üçün təşəkkür edirik. Xoş oyunlar! ✨
 </div><a class="whatsapp"
 href="https://wa.me/994771173626"
 target="_blank">
-💬 Canlı Dəstək
+💬
 </a>
 
 <script>
+
 const qutular=document.querySelectorAll('input[type="checkbox"]');
 const cem=document.getElementById('cem');
 
@@ -118,5 +127,10 @@ toplam+=Number(qutu.value);
 
 cem.innerText=toplam;
 }
+
+document.querySelector(".order-btn").onclick=function(){
+alert("✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə ərzində UC yüklənəcək.");
+}
+
 </script></body>
 </html>
