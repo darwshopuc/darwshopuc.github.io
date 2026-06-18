@@ -1,0 +1,122 @@
+<!DOCTYPE<html lang="az">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DARW SHOP UC</title><style>
+body{
+background:#000;
+color:white;
+font-family:Arial,sans-serif;
+padding:15px;
+}
+
+.box{
+background:#111;
+padding:15px;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+h1,h2,h3{
+margin-bottom:10px;
+}
+
+label{
+display:block;
+padding:8px;
+margin:4px 0;
+background:#1a1a1a;
+border-radius:8px;
+cursor:pointer;
+}
+
+input[type="checkbox"]{
+margin-right:10px;
+}
+
+.price{
+color:gold;
+font-weight:bold;
+}
+
+.whatsapp{
+display:block;
+text-align:center;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50px;
+text-decoration:none;
+font-size:22px;
+font-weight:bold;
+position:fixed;
+bottom:20px;
+left:20px;
+right:20px;
+}
+
+#cem{
+color:gold;
+font-weight:bold;
+}
+</style></head><body><h1>🎮 DARW SHOP UC</h1><div class="box">
+<h2>💎 PUBG Mobile UC Qiymətləri</h2><label><input type="checkbox" value="1">30 UC - 1 AZN</label>
+<label><input type="checkbox" value="2">60 UC - 2 AZN</label>
+<label><input type="checkbox" value="4">120 UC - 4 AZN</label>
+<label><input type="checkbox" value="6">180 UC - 6 AZN</label>
+<label><input type="checkbox" value="7">240 UC - 7 AZN</label>
+<label><input type="checkbox" value="9">325 UC - 9 AZN</label>
+<label><input type="checkbox" value="11">385 UC - 11 AZN</label>
+<label><input type="checkbox" value="17">660 UC - 17 AZN</label>
+<label><input type="checkbox" value="19">720 UC - 19 AZN</label>
+<label><input type="checkbox" value="21">780 UC - 21 AZN</label>
+<label><input type="checkbox" value="26">1045 UC - 26 AZN</label>
+<label><input type="checkbox" value="41">1800 UC - 41 AZN</label>
+<label><input type="checkbox" value="81">3850 UC - 81 AZN</label>
+<label><input type="checkbox" value="156">8100 UC - 156 AZN</label>
+<label><input type="checkbox" value="312">16200 UC - 312 AZN</label>
+<label><input type="checkbox" value="468">24300 UC - 468 AZN</label>
+<label><input type="checkbox" value="624">32400 UC - 624 AZN</label>
+
+<h3>💰 Toplam qiymət: <span id="cem">0</span> AZN</h3>
+</div><div class="box">
+<h2>⭐ Sizə necə kömək edə bilərəm?</h2>💳 Ödəniş:<br><br>
+
+📱 M10: 077-117-36-26<br><br>
+
+💳 Kart: 5243 7544 4775 8283<br>
+🏦 Bank: Unibank<br>
+📅 Bitmə tarixi: 10/29<br><br>
+
+🚀 Ödəniş etdikdən sonra çekin şəklini, PUBG ID-ni və Nickname-i göndərin.
+
+</div><div class="box">
+<h2>📦 Sifariş üçün</h2>
+DARW SHOP-u seçdiyiniz üçün təşəkkür edirik. Xoş oyunlar! ✨
+</div><a class="whatsapp"
+href="https://wa.me/994771173626"
+target="_blank">
+💬 Canlı Dəstək
+</a>
+
+<script>
+const qutular=document.querySelectorAll('input[type="checkbox"]');
+const cem=document.getElementById('cem');
+
+qutular.forEach(qutu=>{
+qutu.addEventListener('change',hesabla);
+});
+
+function hesabla(){
+let toplam=0;
+
+qutular.forEach(qutu=>{
+if(qutu.checked){
+toplam+=Number(qutu.value);
+}
+});
+
+cem.innerText=toplam;
+}
+</script></body>
+</html>
