@@ -148,19 +148,48 @@ for(let i=0;i<qty.length;i++){
 document.getElementById("q"+i).innerText=qty[i];
 totalUC+=qty[i]*ucValues[i];
 totalPrice+=qty[i]*priceValues[i];
-}
+
 
 document.getElementById("totaluc").innerText=totalUC;
 document.getElementById("cem").innerText=totalPrice;
 }
 
-function orderNow(){
-if(document.getElementById("pubgid").value==""){
+asyncconst pubgId = document.getElementById("pubgid").value;
+
+const pubgId = document.getElementById("pubgid").value;
+
+if(!pubgId){
 alert("PUBG ID daxil edin.");
 return;
 }
 
+let totalUC = 0;
+
+for(let i=0;i<qty.length;i++){
+totalUC += qty[i] * ucValues[i];
+}
+
+try {
+
+await fetch("https://darwshop-backend-1.onrender.com/order", {
+method: "POST",
+headers: {
+"Content-Type": "application/json"
+},
+body: JSON.stringify({
+pubgId: pubgId,
+amount: totalUC
+})
+});
+
 alert("✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə ərzində UC yüklənəcək.");
+
+} catch(err) {
+
+alert("❌ Xəta baş verdi.");
+
+}
+
 }
 </script></body>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </html>
