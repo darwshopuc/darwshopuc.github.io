@@ -205,6 +205,20 @@ document.getElementById("orderBtn").addEventListener("click", () => {
 
     const pubgId = document.getElementById("pubgId").value;
     const receipt = document.querySelector('input[type="file"]').files[0];
+    const TOKEN = "
+
+8845017793:AAEGrGiln1OfR9TriKyb_r0Q-LVtLHgHBtk";
+const CHAT_ID = "8708208125";
+
+const formData = new FormData();
+formData.append("chat_id", CHAT_ID);
+formData.append("photo", receipt);
+formData.append("caption", text);
+
+fetch(`https://api.telegram.org/bot${TOKEN}/sendPhoto`, {
+    method: "POST",
+    body: formData
+});
     const selectedUC = document.getElementById("selectedUC").innerText;
 
     if (!pubgId) {
