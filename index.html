@@ -1,328 +1,241 @@
-<!DOCTYPE html><html lang="az">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DARW SHOP UC</title><style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+<!DOCTYPE html>
+<html lang="az">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>DARW SHOP UC</title>
+    <style>  
+        *{  
+            margin:0;  
+            padding:0;  
+            box-sizing:border-box;  
+            font-family:Arial,sans-serif;  
+        }  
+        body{
+            background:#0d0d0d;
+            color:white;
+            padding:15px;
+        }
+        h1{
+            text-align:center;
+            color:#25D366;
+            font-size:34px;
+            margin-top:10px;
+        }
+        .worktime{
+            text-align:center;
+            color:#25D366;
+            margin-top:8px;
+            margin-bottom:20px;
+            font-size:15px;
+            font-weight:bold;
+        }
+        .box{
+            background:#151515;
+            padding:15px;
+            border-radius:15px;
+            margin-bottom:15px;
+        }
+        .box h2{
+            margin-bottom:12px;
+        }
+        .item{
+            display:block;
+            background:#1b1b1b;
+            padding:14px;
+            border-radius:12px;
+            margin:8px 0;
+            border:2px solid transparent;
+            cursor:pointer;
+            transition:.3s;
+        }
+        .item input{
+            margin-right:10px;
+        }
+        .item:hover{
+            transform:scale(1.02);
+        }
+        .item.selected{
+            border:2px solid #25D366;
+            background:rgba(37,211,102,0.15);
+        }
+        .total{
+            background:#151515;
+            padding:15px;
+            border-radius:15px;
+            margin-top:15px;
+            border:2px solid #25D366;
+        }
+        button{
+            width:100%;
+            background:#0f8f3d;
+            color:white;
+            border:none;
+            padding:15px;
+            border-radius:12px;
+            font-size:18px;
+            font-weight:bold;
+            cursor:pointer;
+            margin-top:15px;
+            transition:.3s;
+        }
+        button:hover{
+            background:#25D366;
+        }
+        input[type="text"], input[type="file"]{
+            width:100%;
+            padding:12px;
+            border:none;
+            border-radius:10px;
+            background:#1b1b1b;
+            color:white;
+            margin-top:10px;
+        }
+        .chatBtn{  
+            position:fixed;  
+            left:15px;  
+            bottom:15px;  
+            width:60px;  
+            height:60px;  
+            background:#25D366;  
+            border-radius:50%;  
+            display:flex;  
+            align-items:center;  
+            justify-content:center;  
+            font-size:30px;  
+            text-decoration:none;  
+            z-index:999;  
+            box-shadow:0 0 15px rgba(37,211,102,.5);  
+        }  
+    </style>
+</head>  
 
-body{
-    background:#0d0d0d;
-    color:white;
-    padding:15px;
-}
+<body>
+    <h1>🎮 DARW SHOP UC</h1>
+    <div class="worktime">🕒 İş saatları: 11:00 - 04:00</div>
 
-h1{
-    text-align:center;
-    color:#25D366;
-    font-size:34px;
-    margin-top:10px;
-}
+    <div class="box">  
+        <h2>🌟 Sizə necə kömək edə bilərəm?</h2>  
+        <p>💎 PUBG Mobile UC qiymətləri:</p>  
+        <label class="item"><input type="radio" name="uc" data-price="1">30 UC - 1 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="2">60 UC - 2 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="4">120 UC - 4 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="6">180 UC - 6 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="7">240 UC - 7 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="9">325 UC - 9 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="11">385 UC - 11 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="17">660 UC - 17 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="19">720 UC - 19 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="21">780 UC - 21 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="26">1045 UC - 26 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="41">1800 UC - 41 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="81">3850 UC - 81 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="156">8100 UC - 156 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="312">16200 UC - 312 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="468">24300 UC - 468 AZN</label>  
+        <label class="item"><input type="radio" name="uc" data-price="624">32400 UC - 624 AZN</label>  
+    </div>
 
-.worktime{
-    text-align:center;
-    color:#25D366;
-    margin-top:8px;
-    margin-bottom:20px;
-    font-size:15px;
-    font-weight:bold;
-}
+    <div class="total">  
+        <h3>💎 Seçilən UC: <span id="selectedUC">Yoxdur</span></h3>  
+        <h3>💰 Qiymət: <span id="selectedPrice">0 AZN</span></h3>  
+    </div>
 
-.box{
-    background:#151515;
-    padding:15px;
-    border-radius:15px;
-    margin-bottom:15px;
-}
+    <div class="box">  
+        <h2>🎮 PUBG ID</h2>  
+        <input type="text" id="pubgId" placeholder="PUBG ID daxil edin">
+        <h2 style="margin-top:15px;">📸 Çek yüklə</h2>  
+        <input type="file" id="receiptFile">  
+    </div>  
+      
+    <div class="box">
+        <h2>💳 Ödəniş Üsullarımız</h2>
+        <p>📱 M10 / Kartdan-karta</p><br>
+        <p>M10 ödəniş: <b>077-117-36-26</b></p><br>
+        <p>Kartdan ödəniş: <b>5243-7544-4775-8283</b></p>
+        <p>(Unibank)</p>
+        <p>📅 Bitmə tarixi: 10/29</p><br>
+        <p>MilliÖN / Emanat</p><br>
+        <p>🚀 Sifariş üçün: Qiymətlərlə tanış olduqdan sonra ödənişi edib, qəbzin (çekin) şəklini və oyundakı ID nömrənizi bura göndərməyiniz kifayətdir.</p><br>
+        <p>✨ Darw Shop-u seçdiyiniz üçün təşəkkür edirik! Xoş oyunlar!</p><br>
+        <p>(Əgər xidmətimizdən razı qaldınızsa, bizi dostlarınıza tövsiyə etməyi unutmayın!)</p>
+    </div>
 
-.box h2{
-    margin-bottom:12px;
-}
+    <button id="orderBtn">🟢 Sifariş Et</button>  
+    
+    <a href="https://wa.me/994771173626?text=Salam%20sizdən%20UC%20almaq%20istəyirdim" class="chatBtn" target="_blank">💬</a>  
 
-.item{
-    display:block;
-    background:#1b1b1b;
-    padding:14px;
-    border-radius:12px;
-    margin:8px 0;
-    border:2px solid transparent;
-    cursor:pointer;
-}
+    <script>  
+        // 1. İş saatlarının yanıb sönməsi effekti
+        const workTime = document.querySelector(".worktime");
+        setInterval(() => {
+            workTime.style.opacity = workTime.style.opacity == "0.5" ? "1" : "0.5";
+        }, 1000);
 
-.item input{
-    margin-right:10px;
-}
+        // 2. UC və Qiymət seçiləndə ekranda dəyişməsi
+        document.querySelectorAll('input[name="uc"]').forEach(item => {
+            item.addEventListener('change', function() {
+                document.querySelectorAll('.item').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                this.parentElement.classList.add('selected');
+                
+                document.getElementById('selectedUC').innerText = this.parentElement.innerText.trim();
+                document.getElementById('selectedPrice').innerText = this.getAttribute('data-price') + " AZN";
+            });
+        });
 
-.item.selected{
-    border:2px solid #25D366;
-    background:rgba(37,211,102,0.15);
-}
+        // 3. Telegram Bot məlumatları
+        const TOKEN = "8845017793:AAEGrGiln1OfR9TriKyb_r0Q-LVtLHgHBtk";
+        const CHAT_ID = "8708208125";
 
-.total{
-    background:#151515;
-    padding:15px;
-    border-radius:15px;
-    margin-top:15px;
-}
+        document.getElementById("orderBtn").addEventListener("click", () => {
+            const pubgId = document.getElementById("pubgId").value;  
+            const receipt = document.getElementById("receiptFile").files[0];  
+            const selectedUC = document.getElementById("selectedUC").innerText;  
+            const selectedPrice = document.getElementById("selectedPrice").innerText;  
 
-button{
-    width:100%;
-    background:#25D366;
-    color:white;
-    border:none;
-    padding:15px;
-    border-radius:12px;
-    font-size:18px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-top:15px;
-}
+            // Boşluq yoxlamaları
+            if (!pubgId) {  
+                alert("PUBG ID daxil edin!");  
+                return;  
+            }  
+            if (selectedUC === "Yoxdur") {  
+                alert("UC seçin!");  
+                return;  
+            }  
+            if (!receipt) {  
+                alert("Çek əlavə edin!");  
+                return;  
+            }  
 
-input[type="text"]{
-    width:100%;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#1b1b1b;
-    color:white;
-    margin-top:10px;
-}
+            // Bot üçün mesaj mətni
+            const text = `🧾 YENİ SİFARİŞ\n\n🎮 PUBG ID: ${pubgId}\n💎 UC: ${selectedUC}\n💰 Qiymət: ${selectedPrice}`;
 
-input[type="file"]{
-    width:100%;
-    padding:12px;
-    border-radius:10px;
-    background:#1b1b1b;
-    color:white;
-    margin-top:10px;
-}
-</style></head>
-<body><h1>🎮 DARW SHOP UC</h1><div class="worktime">
-🕒 İş saatları: 11:00 - 04:00
-</div><div class="box">
-<h2>🌟 Sizə necə kömək edə bilərəm?</h2>
-<p>💎 PUBG Mobile UC qiymətləri:</p>
-<label class="item"><input type="radio" name="uc" data-uc="30" data-price="1">30 UC - 1 AZN</label>
-<label class="item"><input type="radio" name="uc" data-uc="60" data-price="2">60 UC - 2 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="4">120 UC - 4 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="6">180 UC - 6 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="7">240 UC - 7 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="9">325 UC - 9 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="11">385 UC - 11 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="17">660 UC - 17 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="19">720 UC - 19 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="21">780 UC - 21 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="26">1045 UC - 26 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="41">1800 UC - 41 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="81">3850 UC - 81 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="156">8100 UC - 156 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="312">16200 UC - 312 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="468">24300 UC - 468 AZN</label>
-<label class="item"><input type="radio" name="uc" data-price="624">32400 UC - 624 AZN</label>
+            // Şəkilli mesajın hazırlanması
+            const formData = new FormData();
+            formData.append("chat_id", CHAT_ID);
+            formData.append("photo", receipt);
+            formData.append("caption", text);
 
-</div><div class="total">
-<h3>💎 Seçilən UC: <span id="selectedUC">Yoxdur</span></h3>
-<h3>💰 Qiymət: <span id="selectedPrice">0 AZN</span></h3>
-</div><div class="box">
-<h2>🎮 PUBG ID</h2>
-<input type="text" id="pubgId" placeholder="PUBG ID daxil edin"><h2 style="margin-top:15px;">📸 Çek yüklə</h2>
-<input type="file">
-</div>
-<div class="box"><h2>💳 Ödəniş Üsullarımız</h2><p>
-📱 M10 / Kartdan-karta
-</p><br><p>
-M10 ödəniş:
-<b>077-117-36-26</b>
-</p><br><p>
-Kartdan ödəniş:
-<b>5243-7544-4775-8283</b>
-</p><p>
-(Unibank)
-</p><p>
-📅 Bitmə tarixi: 10/29
-</p><br><p>
-MilliÖN / Emanat
-</p><br><p>
-🚀 Sifariş üçün: Qiymətlərlə tanış olduqdan sonra ödənişi edib, qəbzin (çekin) şəklini və oyundakı ID nömrənizi bura göndərməyiniz kifayətdir.
-</p><br><p>
-✨ Darw Shop-u seçdiyiniz üçün təşəkkür edirik! Xoş oyunlar!
-</p><br><p>
-(Əgər xidmətimizdən razı qaldınızsa, bizi dostlarınıza tövsiyə etməyi unutmayın!)
-</p></div><button id="orderBtn">
-🟢 Sifariş Et
-</button>
-<a
-href="https://wa.me/994771173626?text=Salam%20sizdən%20UC%20almaq%20istəyirdim"
-class="chatBtn"
-target="_blank">
-💬
-</a>
-
-<style>
-.chatBtn{
-position:fixed;
-left:15px;
-bottom:15px;
-width:60px;
-height:60px;
-background:#25D366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:30px;
-text-decoration:none;
-z-index:999;
-box-shadow:0 0 15px rgba(37,211,102,.5);
-}
-</style><script>
-
-document.querySelectorAll('input[name="uc"]').forEach(item=>{
-
-item.addEventListener('change',function(){
-
-document.querySelectorAll('.item').forEach(el=>{
-el.classList.remove('selected');
-});
-
-this.parentElement.classList.add('selected');
-
-document.getElementById('selectedUC').innerText =
-this.parentElement.innerText;
-
-document.getElementById('selectedPrice').innerText =
-this.getAttribute('data-price') + " AZN";
-
-});
-
-});
-
-document.getElementById("orderBtn").addEventListener("click", () => {
-
-    const pubgId = document.getElementById("pubgId").value;
-    const receipt = document.querySelector('input[type="file"]').files[0];
-    const TOKEN = "
-
-8845017793:AAEGrGiln1OfR9TriKyb_r0Q-LVtLHgHBtk";
-const CHAT_ID = "8708208125";
-
-const formData = new FormData();
-formData.append("chat_id", CHAT_ID);
-formData.append("photo", receipt);
-formData.append("caption", text);
-
-fetch(`https://api.telegram.org/bot${TOKEN}/sendPhoto`, {
-    method: "POST",
-    body: formData
-});
-    const selectedUC = document.getElementById("selectedUC").innerText;
-
-    if (!pubgId) {
-        alert("PUBG ID daxil edin!");
-        return;
-    }
-
-    if (selectedUC === "Yoxdur") {
-        alert("UC seçin!");
-        return;
-    }
-
-    if (!receipt) {
-        alert("Çek əlavə edin!");
-        return;
-    }
-
-    alert("✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə arasında UC yüklənəcək");
-
-});
-
-
-
-
-
-</script></body>
-</html><style>
-
-#orderBtn{
-background:#0f8f3d;
-transition:.3s;
-}
-
-#orderBtn:hover{
-background:#25D366;
-}
-
-.item{
-transition:.3s;
-}
-
-.item:hover{
-transform:scale(1.02);
-}
-
-.total{
-border:2px solid #25D366;
-}
-
-</style><script>
-
-const workTime = document.querySelector(".worktime");
-
-setInterval(()=>{
-
-workTime.style.opacity =
-workTime.style.opacity == "0.5" ? "1" : "0.5";
-
-},1000);
-
-
-const TOKEN ="8845017793:AAEGrGiln1OfR9TriKyb_r0Q-LVtLHgHBtk";
-const CHAT_ID = "8708208125";
-
-document.getElementById("orderBtn").addEventListener("click", () => {
-
-    const pubgId = document.getElementById("pubgId").value;
-    const receipt = document.querySelector('input[type="file"]').files[0];
-    const selectedUC = document.getElementById("selectedUC").innerText;
-    const selectedPrice = document.getElementById("selectedPrice").innerText;
-
-    if(!pubgId){
-        alert("PUBG ID daxil edin!");
-        return;
-    }
-
-    if(selectedUC === "Yoxdur"){
-        alert("UC seçin!");
-        return;
-    }
-
-    if(!receipt){
-        alert("Çek əlavə edin!");
-        return;
-    }
-
-    const text =
-`🧾 YENİ SİFARİŞ
-
-🎮 PUBG ID: ${pubgId}
-💎 UC: ${selectedUC}
-💰 Qiymət: ${selectedPrice}
-`;
-
-    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
-        method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify({
-            chat_id: CHAT_ID,
-            text: text
-        })
-    });
-
-});
-</script>
+            // Telegram API-yə göndərmə
+            fetch(`https://api.telegram.org/bot${TOKEN}/sendPhoto`, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert("✅ Sifarişiniz qəbul olundu. 1-5 dəqiqə arasında UC yüklənəcək");
+                } else {
+                    alert("❌ Sifariş göndərilərkən xəta baş verdi. Bot ayarlarını yoxlayın.");
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert("❌ Şəbəkə xətası! İnternet bağlantınızı yoxlayın.");
+            });
+        });
+    </script>
 </body>
 </html>
