@@ -266,5 +266,51 @@ workTime.style.opacity == "0.5" ? "1" : "0.5";
 },1000);
 
 </script>
+const TOKEN = "
+
+8845017793:AAEGrGiln1OfR9TriKyb_r0Q-LVtLHgHBtk";
+const CHAT_ID = "8708208125";
+
+document.getElementById("orderBtn").addEventListener("click", () => {
+
+    const pubgId = document.getElementById("pubgId").value;
+    const receipt = document.querySelector('input[type="file"]').files[0];
+    const selectedUC = document.getElementById("selectedUC").innerText;
+    const selectedPrice = document.getElementById("selectedPrice").innerText;
+
+    if(!pubgId){
+        alert("PUBG ID daxil edin!");
+        return;
+    }
+
+    if(selectedUC === "Yoxdur"){
+        alert("UC seçin!");
+        return;
+    }
+
+    if(!receipt){
+        alert("Çek əlavə edin!");
+        return;
+    }
+
+    const text =
+`🧾 YENİ SİFARİŞ
+
+🎮 PUBG ID: ${pubgId}
+💎 UC: ${selectedUC}
+💰 Qiymət: ${selectedPrice}
+`;
+
+    fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: {"Content-Type":"application/json"},
+        body: JSON.stringify({
+            chat_id: CHAT_ID,
+            text: text
+        })
+    });
+
+});
+</script>
 </body>
 </html>
